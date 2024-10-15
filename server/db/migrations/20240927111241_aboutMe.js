@@ -6,7 +6,7 @@ export async function up(knex) {
   return knex.schema.createTable('aboutMe', (table) => {
     table.increments('id').primary()
     table.string('name')
-    table.string('street_name')
+    table.string('code_name')
     table.integer('level')
     table.string('status')
     table.string('current_quest')

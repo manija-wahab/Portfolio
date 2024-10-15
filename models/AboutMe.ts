@@ -1,7 +1,7 @@
 export interface AboutMe {
   id: number
   name: string
-  street_name: string
+  code_name: string
   level: number
   status: string
   current_quest: string

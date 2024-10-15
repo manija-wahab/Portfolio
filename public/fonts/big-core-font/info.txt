@@ -1,0 +1,2 @@
+﻿license: Demo
+link: https://www.fontspace.com/big-core-font-f112130

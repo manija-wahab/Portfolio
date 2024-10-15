@@ -4,7 +4,7 @@ export async function seed(knex) {
     {
       id: 1,
       name: JSON.stringify(['Noorya', 'Nora', "Don't call me Manija :C"]),
-      street_name: 'Nora the Internet Explorer',
+      code_name: 'Nora the Internet Explorer',
       level: 19,
       status: 'Freeloader living with parents',
       current_quest: 'Looking for a job to not be a freeloader',

@@ -1,0 +1,85 @@
+// ╔═════════════════╗
+// ║   Sass Styles   ║
+// ╚═════════════════╝
+
+@mixin flexBox($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+// ╔═══════════════╗
+// ║   Inventory   ║
+// ╚═══════════════╝
+
+.inventory-container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+// ╔════════════╗
+// ║   SKills   ║
+// ╚════════════╝
+
+.skills-container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  @include flexBox(column);
+  justify-content: space-evenly;
+}
+
+.skills-header-box {
+  @include flexBox(column);
+}
+
+.skills-header {
+  color: white;
+  font-family: rene;
+  font-size: calc(3vh + 3vw);
+}
+
+.skills-text {
+  color: white;
+  font-family: rene;
+  font-size: calc(1vh + 1vw);
+}
+
+.skills-grid-container {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  align-content: flex-start;
+  height: 60vh; 
+  width: 80vw; 
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.skills-grid-item {
+  border: 1px white solid;
+  transition: background-color 0.2s;
+  background-color: rgba(255, 255, 255, 0.418);
+  flex-basis: calc((80vw / 30) - 1.5px);
+  height: calc((60vh / 5) - 1.5px); 
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.skill-image {
+  width: 60%;
+}
+
+.skills-grid-item.empty {
+  background-color: #ffffff30; 
+}
+
+.skills-grid-item:hover {
+  background-color: #e0e0e0;
+}
