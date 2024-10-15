@@ -20,6 +20,20 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/:id', async (req, res) => {
+  const id = parseInt(req.params.id, 10)
+  try {
+    const skill = await db.getSkillDetailsById(id) // Pass the numeric id
+    if (skill) {
+      res.json(skill) // Send the skill details
+    } else {
+      res.status(404).json({ message: 'Skill not found' }) // Handle if no skill found
+    }
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
+})
 // ╔═════════════════╗
 // ║   Post Routes   ║
 // ╚═════════════════╝

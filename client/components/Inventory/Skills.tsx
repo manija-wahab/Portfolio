@@ -5,7 +5,7 @@ import { Item } from '../../../models/Inventory'
 import { Link } from 'react-router-dom'
 
 const Skills = () => {
-  const { data: skills = [] } = useQuery({
+  const { data = [] } = useQuery({
     queryKey: ['skills'],
     queryFn: async () => {
       const response = await request.get('/api/v1/skills')
@@ -13,7 +13,8 @@ const Skills = () => {
     },
   })
 
-  const emptyItemsCount = Math.ceil((skills.length + 1) / 10) * 50
+  const skills = Array.isArray(data) ? data : []
+  const emptyItemsCount = Math.ceil((data?.length ?? 0 + 1) / 10) * 50
 
   return (
     <div className="skills-container">
@@ -22,9 +23,9 @@ const Skills = () => {
         <p className="skills-text">Click to view details (More Incoming :3)</p>
       </div>
       <div className="skills-grid-container">
-        {skills.map((skill) => (
+        {skills?.map((skill) => (
           <Link
-            to={`/Inventory/Skills/${skill.name}`}
+            to={`/Inventory/Skills/${skill.id}`}
             key={skill.id}
             className="skills-grid-item"
           >
