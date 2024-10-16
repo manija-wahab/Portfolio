@@ -53,18 +53,20 @@
   flex-wrap: wrap; 
   justify-content: center; 
   align-content: flex-start;
-  height: 60vh; 
+  height: calc(4 * calc(5vh + 5vw));
   width: 80vw; 
   box-sizing: border-box;
   overflow: hidden;
 }
 
 .skills-grid-item {
-  border: 1px white solid;
+  border: calc(0.05vh + 0.05vw) white solid;
   transition: background-color 0.2s;
   background-color: rgba(255, 255, 255, 0.418);
-  flex-basis: calc((80vw / 10) - 1.5px);
-  height: calc((60vh / 4) - 1.5px); 
+  height: calc(5vh + 5vw) ;
+  // flex-basis: calc((80vw / 12) - 0.1rem);
+  // height: calc((60vh / 4) - calc(0.1vh + 0.05vw));
+  box-sizing: border-box;
   aspect-ratio: 1 / 1;
   display: flex;
   justify-content: center;
@@ -109,6 +111,7 @@
 .item-section-one {
   width: 40%;
   height: 100%;
+  padding: 5%;
   @include flexBox(column);
   justify-content: space-evenly;
 }
@@ -122,10 +125,74 @@
   gap: 5%;
 }
 
+.item-experience-title {
+  color: rgb(227, 39, 67);
+  text-shadow: 0 0 calc(1vh + 1vw) rgb(227, 39, 67);
+}
+
+.item-icon-box {
+  width: 100%;
+  perspective: 1000px;
+  @include flexBox();
+}
+
+.item-icon {
+  width: 90%;
+  height: auto;
+  box-sizing: border-box;
+  animation: spin 10s infinite linear;
+  transform-style: preserve-3d; 
+}
+
+.item-name {
+  text-shadow: 0 0 calc(1vh + 1vw) rgb(255, 255, 255);
+}
+
 .item-text-box {
   overflow: scroll;
 }
 
 .item-text {
   font-size: calc(1vh + 1vw);
+}
+
+.confidence-bar-box {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.confidence-text {
+  font-size: calc(1vh + 1vw);
+  margin-bottom: 5%;
+  text-align: left;
+  
+}
+
+.confidence-bar {
+  position: relative;
+  width: 100%; 
+  height: calc(0.5vh + 0.5vw);
+  background-color: rgba(255, 255, 255, 0.443);
+  border-radius: 5px;
+}
+
+.confidence-position {
+  height: 100%; 
+  background-color: rgb(227, 39, 67);
+  box-shadow: 0 0 calc(1vh + 1vw) rgb(227, 39, 67), 0 0 calc(0.5vh + 0.5vw) rgb(227, 39, 67);
+  border-radius: 5px;
+  width: 0%;
+  transition: width 3s ease 0.2s 
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0, 1, 0, 0deg); 
+  }
+  50% {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg); 
+  }
 }

@@ -134,5 +134,19 @@ export async function seed(knex) {
         'I chose Sass as the topic for my lightning talk during boot camp because I wanted to learn more about CSS. Sass has become a really useful part of writing CSS for me, and I’m also using it for the CSS in this very project. I mostly like using mixins, variables, and nesting. I feel like there’s still a lot more for me to learn, so I should probably spend some more time exploring other features of Sass. So far, it feels like it has made writing CSS so much easier!',
       confidence_level: 30,
     },
+    {
+      name: 'Linux (Ubuntu) ',
+      icon: '/images/inventory/linux.svg',
+      experience:
+        'Using Linux was one of the best decisions I’ve made for development. At first it was a bit intimidating—coming from Windows the command line was unfamiliar territory and setting it up made me feel really anxious but over time I’ve grown to appreciate how lightweight and customizable Ubuntu is and now I love how much control it gives me over my development environment. At first I couldn’t wrap my head around why we can’t just use the default windows file explorer now I understand how much more time efficent it is. I feel like it’s made me a more efficient developer especially with how seamlessly it integrates with tools like Git and VS Code. Plus, it’s just fun to use now I can’t imagine working with anything else.',
+      confidence_level: 70,
+    },
+    {
+      name: 'VS Code',
+      icon: '/images/inventory/file-type-vscode.svg',
+      experience:
+        'I’ve been using VS Code since I first started coding and it’s been my go-to code editor ever since. From the moment I created my first HTML file, VS Code has been there for me. I am someone who highly customzies everything so I appreciate how much you can customize such as the themes and layout. I am open to try other softwares if the company im working at recommends it, but so far im pretty comfortable with VS Code as it is but again im happy to explore new softwares and tools.',
+      confidence_level: 100,
+    },
   ])
 }

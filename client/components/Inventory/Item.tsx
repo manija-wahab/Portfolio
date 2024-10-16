@@ -19,14 +19,25 @@ const Item = () => {
     <div className="item-container">
       <div className="item-box">
         <div className="item-section-one">
-          <img src={data.icon} alt="item icon" />
+          <div className="item-icon-box">
+            <img src={data?.icon} alt="item icon" className="item-icon" />
+          </div>
 
-          <h1>{data.name}</h1>
+          <h1 className="item-name">{data?.name}</h1>
+          <div className="confidence-bar-box">
+            <p className="confidence-text">Confidence Level</p>
+            <div className="confidence-bar">
+              <div
+                className="confidence-position"
+                style={{ width: `${data?.confidence_level}%` }}
+              ></div>
+            </div>
+          </div>
         </div>
         <div className="item-section-two">
-          <h1>Experience</h1>
+          <h1 className="item-experience-title">Experience</h1>
           <div className="item-text-box">
-            <h3 className="item-text">{data.experience}</h3>
+            <h3 className="item-text">{data?.experience}</h3>
           </div>
         </div>
       </div>
