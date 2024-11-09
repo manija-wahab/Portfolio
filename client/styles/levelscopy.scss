@@ -1,0 +1,108 @@
+// // ╔═════════════════╗
+// // ║   Sass Styles   ║
+// // ╚═════════════════╝
+
+// @mixin flexBox($direction: row) {
+//   display: flex;
+//   flex-direction: $direction;
+//   justify-content: center;
+//   align-items: center;
+//   box-sizing: border-box;
+// }
+
+// // ╔════════════╗
+// // ║   Levels   ║
+// // ╚════════════╝
+
+// .levels-container {
+//   @include flexBox();
+//   width: 100%;
+//   height: 100%;
+//   box-sizing: border-box;
+//   padding: 5%;
+//   flex-wrap: wrap;
+// }
+
+// .levels-text {
+//   @include flexBox();
+//   height: 100%;
+//   width: 50%;
+//   box-sizing: border-box;
+
+// }
+
+// .levels-layout {
+//   @include flexBox();
+//   height: 100%;
+//   width: 50%;
+//   box-sizing: border-box;
+// }
+
+// .levels-text-container {
+//   @include flexBox(column);
+//   align-items: start;
+//   height: 100%;
+//   width: 100%;
+//   color: white;
+// }
+
+// .levels-title {
+//   font-family: spacer;
+//   font-size: calc(5vh + 5vw);
+// }
+
+// .levels-sentence {
+//   font-family: spacer;
+//   font-size: calc(1vh + 1vw);
+// }
+
+// .levels-box {
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   perspective: 1000px;
+//   width: 100%;
+//   height: 100%;
+//   padding: 10%;
+//   gap: 5%;
+//   box-sizing: border-box;
+// }
+
+// .level {
+//   box-sizing: border-box;
+// }
+
+// .level {
+//   height: 100%;
+//   width: 100%;
+//   // width: 50%;
+//   // width: calc(10vh + 10vw);
+//   // height: calc(12vh + 12vw);
+//   background-color: #34505f57;
+//   transition: transform 0.3s ease, box-shadow 0.3s ease;;
+//   transform-style: preserve-3d;
+//   box-shadow: 0 calc(0.5vh + 0.5vw) calc(1vh + 1vw) black;
+//   backdrop-filter: blur(50px);
+//   border-radius: calc(0.5vh + 0.5vw);
+//   border: calc(0.1vh + 0.1vw) solid rgba(255, 255, 255, 0.203);
+// }
+
+// .level:hover {
+//   transform: translateZ(500px);
+// }
+
+
+// .level:nth-child(1):hover, .level:nth-child(3):hover {
+//   transform: rotateY(-10deg) translateZ(100px);
+//   // box-shadow: 10px calc(0.5vh + 0.5vw) calc(3vh + 3vw) rgb(0, 0, 0);
+//   box-shadow: 0 0 calc(2vh + 2vw) #b2e4ff;
+
+
+// }
+
+// .level:nth-child(2):hover, .level:nth-child(4):hover {
+//   transform: rotateY(10deg) translateZ(100px); 
+//   // box-shadow: 0 calc(0.5vh + 0.5vw) calc(3vh + 3vw) rgb(0, 0, 0);
+//   box-shadow: 0 0 calc(2vh + 2vw) #b2e4ff;
+
+
+// }

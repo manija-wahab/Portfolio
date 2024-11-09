@@ -1,0 +1,151 @@
+@mixin flexBox($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.menu-container {
+  height: 100vh;
+  width: 100vw;
+  @include flexBox(column);
+  position: relative;
+  gap: 10%
+
+}
+
+.menu-header {
+  @include flexBox(column);
+  justify-content: flex-end;
+  text-align: center;
+  gap: calc(1vh + 1vw);
+  filter: drop-shadow(0 0 calc(1vh + 1vw) rgb(48, 22, 108));
+  width: 100%;
+  height: 100%;
+}
+
+.menu-header h1 {
+  font-family: n;
+  color: white;
+  font-size: 8vw;
+    text-shadow: 0 0 calc(0.5vh + 0.5vw) rgb(255, 255, 255);
+}
+
+.menu-header h3 {
+  font-family: b;
+  color: white;
+  font-size: calc(2vh + 2vw);
+  text-shadow: 0 0 calc(0.5vh + 0.5vw) rgb(255, 255, 255);
+}
+
+.menu-box-container {
+  width: 100%;
+  height: 100%;
+  @include flexBox(column);
+  justify-content: flex-end;
+}
+
+.menu-box {
+  @include flexBox(column);
+  text-align: center;
+  mask-image: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0) 10%, 
+    rgba(0, 0, 0, 1) 30%, 
+    rgba(0, 0, 0, 1) 70%, 
+    rgba(0, 0, 0, 0) 90%  
+  );
+  -webkit-mask-image: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0) 10%, 
+    rgba(0, 0, 0, 1) 30%, 
+    rgba(0, 0, 0, 1) 70%, 
+    rgba(0, 0, 0, 0) 90%
+  );
+}
+
+
+.option {
+  background: linear-gradient(90deg, transparent, rgb(148, 131, 186), transparent);
+  padding: 3vh;
+  width: calc(50vh + 20vw);
+  font-size: calc(1vh + 1vw);
+  color: white;
+  font-family: n;
+  border-top: calc(0.1vh + 0.1vw) solid rgba(255, 255, 255, 0.525);
+  text-shadow: 0 0 calc(0.5vh + 0.5vw) rgb(255, 255, 255);
+  transition: text-shadow 0.1s ease, font-size 0.1s ease;
+  background-color: transparent;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+}
+
+.option:hover {
+  text-shadow: 0 0 calc(1vh + 1vw) rgb(255, 255, 255),  0 0 calc(1vh + 1vw) rgb(255, 255, 255), 0 0 calc(1vh + 1vw) rgb(255, 255, 255);
+  background: linear-gradient(90deg, transparent, rgb(176, 156, 219), transparent);
+  font-size: calc(1.1vh + 1.1vw);
+}
+
+.details-box {
+  position: absolute;
+  z-index: 1000;
+  background-color: rgba(125, 103, 177, 0.568);
+  backdrop-filter: blur(calc(0.3vh + 0.3vw));
+  border: calc(0.05vh + 0.05vw) white solid;
+  aspect-ratio: 5/3;
+  width: calc(40vh + 40vw);
+  padding: 5%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+  font-family: spacer;
+  font-size: calc(1.5vh + 1.5vw);
+  text-shadow:  0 0 calc(1vh + 1vw) rgb(255, 255, 255);
+  transition: text-shadow 1s ease;
+}
+
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  color: white;
+  font-family: four;
+  font-size: calc(1.5vh + 1.5vw);
+  border: none;
+  padding: calc(1vh + 1vw) calc(2vh + 2vw);
+  text-shadow: 0 0 calc(0.5vh + 0.5vw) rgb(255, 255, 255);
+  transition: transform 0.2s ease;
+}
+
+.details-box h3 {
+  transition: transform 0.2s ease;
+  transform-origin: top left;
+
+}
+
+.details-box h3:hover {
+  transform: scale(1.1);
+  transform-origin: top left;
+}
+
+.close:hover {
+  transform: scale(1.3);
+}
+
+.overlay1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0; 
+  pointer-events: none;
+  z-index: 99999999;
+}

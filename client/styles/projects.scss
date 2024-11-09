@@ -1,0 +1,337 @@
+/* Body Styles */
+body {
+  background-color: #f8fafc;
+  overflow: hidden;
+}
+
+/* Container Styles */
+.project-viewer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Child 0 - Maps Content Box */
+.maps-content-box {
+  background-color: plum;
+  width: 100%;
+  height: 65%;
+  padding: calc(1vh + 1vw) calc(2vh + 2vw);
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  top: 0;
+  gap: 5%;
+  
+}
+
+.map-h1 {
+  font-size: calc(3.5vh + 3.5vw);
+  font-family: e;
+  width: 100%;
+  white-space: nowrap;
+  overflow: visible;
+  z-index: 10000;
+  color: #ffffff;
+}
+
+/* Map Containers */
+.map-containers {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  box-sizing: border-box;
+  gap: 10%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+
+/* Map Details Container */
+.map-details-container {
+  z-index: 10000000;
+  color: white;
+  height: 100%;
+  width: 40%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;}
+
+/* Map About Container */
+.map-about-container {
+  z-index: 100000;
+  width: 45%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: calc(1vh + 1vw);
+  box-sizing: border-box;
+  overflow-x: scroll;
+}
+
+.map-about-container h3 {
+  font-size: calc(1.5vh + 1.5vw);
+  font-family: rene;
+}
+
+.map-about-container p {
+  font-size: calc(1vh + 1vw);
+  font-family: rene;
+  height: 100%;
+  overflow: scroll;
+  scrollbar-width: 0px;
+  scrollbar-width: none;
+}
+
+.map-containers::-webkit-scrollbar,
+.map-about-container::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in WebKit browsers */
+}
+
+
+
+
+
+/* Individual Maps */
+.map1, .map2 {
+  display: flex;
+  flex-direction: column;
+  gap: calc(1vh + 1vw);
+}
+
+
+
+.map-summary {
+  font-size: calc(2vh + 0.5vw);
+  width: 100%;
+  font-family: rene;}
+
+.map-details {
+  font-size: calc(1vh + 1vw);
+  font-family: rene;
+}
+
+/* Developers Section */
+.devs {
+  display: flex; 
+  flex-wrap: wrap;
+  gap: calc(0.5vh + 0.5vw);}
+
+/* Map 3 Styles */
+.map3 {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  padding: calc(2vh + 2vw);
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.map3 img {
+  aspect-ratio: 1/1;
+  padding: calc(1vh + 1vw);
+  box-sizing: border-box;
+  height: 40%;
+  border-radius: calc(0.5vh + 0.5vw);
+}
+
+/* Enter Button */
+.enter-button {
+  width: max-content;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: calc(0.5vh + 0.5vw);
+  font-size: calc(3vh + 3vw);
+  font-family: rene;
+  text-decoration: none;
+  color: #f92f2f;
+  text-shadow: none;
+  box-sizing: border-box;
+  transition: transform  0.2s ease;
+}
+
+.enter-button:hover {
+  transform: scale(0.9);
+}
+
+.returnBut3 {
+  position: absolute;
+  z-index: 100000;
+  color: white;
+  font-size: calc(2vh + 2vw);
+  right: 0;
+  top: 0;
+  width: min-content;
+  color: white;
+  paint-order: stroke fill;
+  text-transform: uppercase;
+  font-family: e;
+  transition: transform 0.5s ease; 
+  transform-origin: top right; 
+  background-color: transparent;
+  border: none;
+  padding: calc(1vh + 1vw) calc(2vh + 2vw);
+  transition: transform 0.2s ease;
+}
+
+.returnBut3:hover {
+  transform: scale(1.1);
+}
+
+/* Child 1 - Project Navigation */
+.project-nav {
+  width: 100%;
+  height: 35%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-self: flex-end;
+  box-sizing: border-box;
+  bottom: 0;
+  z-index: 100000;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+/* Child 2 - Project Controls */
+.project-controls {
+  position: absolute;
+  z-index: 100000;
+  width: max-content;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.project {
+  font-size: calc(3vh + 3vw);
+  padding: calc(0.5vh + 0.5vw);
+  -webkit-text-stroke: calc(0.1vh + 0.1vw) rgb(255, 255, 255);
+  background-color: transparent;
+  border: none;
+  color: white;
+  opacity: 0.8;
+}
+
+/* Child 3 - Project Details */
+.project-details {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; 
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 500;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.project-details::-webkit-scrollbar {
+  display: none;
+}
+
+.project-details::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(27, 1, 1, 0.769), rgb(0, 0, 0));
+  z-index: 2;
+  pointer-events: none;
+}
+
+.project-details img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+/* Child 2 Children - Project Nav Container */
+.project-nav-contain {
+  width: 50%;
+  display: flex;
+  gap: 10%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: calc(2vh + 2vw);
+  overflow: hidden;
+}
+
+.project-nav button {
+  aspect-ratio: 16 / 9;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border: none;
+  transition: transform 0.3s ease;
+  box-sizing: border-box;
+  filter: grayscale(1) brightness(0.5);
+  box-shadow: 0 0 calc(1vh + 1vw) black;
+}
+
+.project-nav button.active {
+  filter: grayscale(0) brightness(1);
+  transform: scale(1.1);
+}
+
+@media (max-aspect-ratio: 4/3) {
+  .map-containers, .project-nav {
+    flex-direction: column;
+  }
+
+  .map-about-container, .map-details-container, .map3, .project-nav-contain {
+    width: 100%;
+  }
+
+  .map3 {
+    height: 20%;
+    padding: 0 5%;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: 0px;
+  }
+
+  .map3::-webkit-scrollbar {
+    display: none;
+  }
+
+  .map3 img {
+    height: 90%;
+    padding: 2%;
+
+  }
+
+  .project-nav-contain button {
+    height: 80%;
+  }
+  .project-nav-contain  {
+    align-items: center;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 1; 
+  pointer-events: none;
+  z-index: 99999999;
+}

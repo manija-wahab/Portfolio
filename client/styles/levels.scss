@@ -1,0 +1,136 @@
+@mixin flexBox($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.levels-container {
+  @include flexBox();
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  background-color: black;
+}
+
+.padding-container {
+  padding: calc(1vh + 1vw);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.levels-layout {
+  @include flexBox();
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+}
+
+.level {
+  flex: 1;
+  height: 100%;
+  width: 35.33%;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  box-sizing: border-box;
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease;
+  filter: grayscale(1) brightness(0.3);
+
+  &:hover {
+    transform: scale(1.1);
+    z-index: 100;
+    filter: drop-shadow(0 0 calc(3vh + 3vw)  black);
+  }
+}
+
+.level-one {
+  left: -5%;
+}
+.level-two {
+  left: 20%;
+}
+.level-three {
+  left: 45%;
+}
+.level-four {
+  left: 70%;
+}
+
+.level-content {
+  height: 100%;
+  width: 100%;
+  transition: transform 0.1s ease;
+}
+
+.level-one .level-content {
+  clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%);
+  background-image: url(/public/images/levels/one.png);
+  background-position: center;
+  background-size: cover;
+}
+
+
+.level-two .level-content {
+  clip-path: polygon(0 0, 100% 0, 70% 100%, 30% 100%);
+  background-image: url(/public/images/levels/twotwo.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.level-three .level-content {
+  clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);
+  background-image: url(/public/images/levels/enter.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.level-four .level-content {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+  background-image: url(/public/images/levels/four.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.select { 
+  position: absolute;
+  z-index: 10000;
+  color: white;
+  font-family: spacer;
+  font-size: 5vw;
+  mix-blend-mode: lighten;
+  animation: slowBlink 3s infinite;
+  bottom: 5%;
+}
+
+@keyframes slowBlink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 1; 
+  pointer-events: none;
+  z-index: 99999999;
+}
