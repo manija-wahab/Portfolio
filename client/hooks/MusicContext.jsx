@@ -6,8 +6,8 @@ const MusicContext = createContext()
 export const useMusic = () => useContext(MusicContext)
 
 export const MusicProvider = ({ children }) => {
-  const backgroundMusicUrl = '/sounds/2/tekken.mp3'
-  const [volume, setVolume] = useState(0.1)
+  const backgroundMusicUrl = '/sounds/2/two.mp3'
+  const [volume, setVolume] = useState(0.3)
   const [play, { stop, pause, sound }] = useSound(backgroundMusicUrl, {
     loop: true,
     volume: volume,

@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom'
-import { MusicProvider } from '../hooks/MusicContext' // Import the provider
+import { MusicProvider } from '../hooks/MusicContext'
 
 function App() {
   return (

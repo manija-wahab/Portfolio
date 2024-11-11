@@ -71,7 +71,7 @@
 
 .level-one .level-content {
   clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%);
-  background-image: url(/public/images/levels/one.png);
+  background-image: url(/images/levels/one.png);
   background-position: center;
   background-size: cover;
 }
@@ -79,21 +79,21 @@
 
 .level-two .level-content {
   clip-path: polygon(0 0, 100% 0, 70% 100%, 30% 100%);
-  background-image: url(/public/images/levels/twotwo.png);
+  background-image: url(/images/levels/twotwo.png);
   background-position: center;
   background-size: cover;
 }
 
 .level-three .level-content {
   clip-path: polygon(30% 0, 70% 0, 100% 100%, 0 100%);
-  background-image: url(/public/images/levels/enter.png);
+  background-image: url(/images/levels/enter.png);
   background-position: center;
   background-size: cover;
 }
 
 .level-four .level-content {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
-  background-image: url(/public/images/levels/four.png);
+  background-image: url(/images/levels/four.png);
   background-position: center;
   background-size: cover;
 }
@@ -103,7 +103,7 @@
   z-index: 10000;
   color: white;
   font-family: spacer;
-  font-size: 5vw;
+  font-size: 4vw;
   mix-blend-mode: lighten;
   animation: slowBlink 3s infinite;
   bottom: 5%;

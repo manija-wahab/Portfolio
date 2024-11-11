@@ -138,6 +138,33 @@
   transform: scale(1.3);
 }
 
+.start {
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+  padding: calc(0.5vh + 0.5vw);
+  background-color: rgba(42, 22, 71, 0.427);
+  animation: slowBlink 3s infinite;
+  color: white;
+  font-family: spacer;
+  font-size: calc(1.5vh + 1.5vw);
+  text-shadow:  0 0 calc(1vh + 1vw) rgb(255, 255, 255);
+  text-align: center;
+  top: 5%;
+}
+
+@keyframes slowBlink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .overlay1 {
   position: fixed;
   top: 0;

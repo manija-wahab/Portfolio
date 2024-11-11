@@ -9,8 +9,13 @@ export async function seed(knex) {
       status: 'Freeloader living with parents',
       current_quest: 'Looking for a job to not be a freeloader',
       species: 'Full stack developer',
-      likes: JSON.stringify(['Anime', 'video games', 'books']),
-      dislikes: 'People who are not cheerful at 5am in the morning',
+      likes: JSON.stringify([
+        'Sailor Moon',
+        'video games',
+        'non-fiction books',
+        'metaphysics',
+      ]),
+      dislikes: 'fiction books',
       combat_moves: JSON.stringify([
         'Debugging at 3 AM',
         'Writing decent CSS',
@@ -19,7 +24,7 @@ export async function seed(knex) {
       ]),
       achievements: 'Completed Dev Academy',
       origin_story:
-        'I hate my real name Manija, so my family calls me Nora, but no one else ever said it right :C So my friends call me Nora :D But this became a problem as everyone started to call me Dora the Explorer. But I embraced it and started calling myself Nora the Explorer, and once I began coding, I upgraded to "Nora the Internet Explorer." Hah! Get it? Like the web browser! Okay, sorry, that was cringe. Now, I wander the digital realm, solving bugs and pushing code. Thank you for reading C:',
+        'I hate my real name Manija, so my family calls me Noorya, but no one else ever said it right :C So my friends and teachers started to call me Nora :D and since it rhymed with Dora the Explorer, I started calling myself Nora the Explorer, and once I began coding, I upgraded to "Nora the Internet Explorer." Hah! Get it? Like the web browser! Okay, sorry, that was cringe. Thank you for reading C:',
     },
   ])
 }

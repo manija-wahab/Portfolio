@@ -49,20 +49,21 @@ const AboutMe = () => {
               <p className="itemDet">{info.code_name}</p>
             </div>
             <div className="item1" onMouseEnter={handleMouseEnter}>
-              <p className="itemTitle">Origin Story</p>
-              <p className="itemDet">{info.origin_story}</p>
-            </div>
-            <div className="item1" onMouseEnter={handleMouseEnter}>
               <p className="itemTitle">Level</p>
               <p className="itemDet">{info.level}</p>
             </div>
             <div className="item1" onMouseEnter={handleMouseEnter}>
-              <p className="itemTitle">Status</p>
-              <p className="itemDet">{info.status}</p>
-            </div>
-            <div className="item1" onMouseEnter={handleMouseEnter}>
               <p className="itemTitle">Side Quests</p>
               <p className="itemDet">{info.current_quest}</p>
+            </div>
+
+            <div className="item1" onMouseEnter={handleMouseEnter}>
+              <p className="itemTitle">Species</p>
+              <p className="itemDet">{info.species}</p>
+            </div>
+            <div className="item1" onMouseEnter={handleMouseEnter}>
+              <p className="itemTitle">Achievements</p>
+              <p className="itemDet">{info.achievements}</p>
             </div>
           </div>
         ))}
@@ -76,8 +77,8 @@ const AboutMe = () => {
         {data?.map((info) => (
           <div key={info.id} className="info-set-2 info-container">
             <div className="item2" onMouseEnter={handleMouseEnter}>
-              <p className="itemTitle">Species</p>
-              <p className="itemDet">{info.species}</p>
+              <p className="itemTitle">Status</p>
+              <p className="itemDet">{info.status}</p>
             </div>
             <div className="item2" onMouseEnter={handleMouseEnter}>
               <p className="itemTitle">Likes</p>
@@ -103,8 +104,8 @@ const AboutMe = () => {
               )}
             </div>
             <div className="item2" onMouseEnter={handleMouseEnter}>
-              <p className="itemTitle">Achievements</p>
-              <p className="itemDet">{info.achievements}</p>
+              <p className="itemTitle">Origin Story</p>
+              <p className="itemDet">{info.origin_story}</p>
             </div>
           </div>
         ))}
