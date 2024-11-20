@@ -5,11 +5,24 @@ import '../styles/main.scss'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
+  const [hasHovered, setHasHovered] = useState(false) // Track if the user has hovered
+  const [isVideoReady, setIsVideoReady] = useState(false) // Track video load status
 
   useEffect(() => {
-    const preloadAssets = () => {
+    // Preload the specific video first
+    const preloadVideo = () => {
+      const video = document.createElement('video')
+      video.src = '/images/Japan/tokyo-street-sakura-moewalls-com.mp4'
+      video.preload = 'auto' // Ensure the video loads as soon as possible
+      video.oncanplaythrough = () => {
+        setIsVideoReady(true) // Video is ready to play
+        preloadAssets() // Start preloading other assets once the video is ready
+      }
+      video.load()
+    }
+
+    const preloadAssets = async () => {
       const assetsToPreload = [
-        '/sounds/2/two.mp3',
         '/images/levels/one.png',
         '/images/levels/twotwo.png',
         '/images/levels/enter.png',
@@ -19,50 +32,60 @@ function App() {
         '/images/cyberpunk-blade-runner.1920x1080.mp4',
       ]
 
-      const preloadPromises = assetsToPreload.map((asset) => {
-        return new Promise<void>((resolve, reject) => {
-          const element = asset.endsWith('.mp4')
-            ? document.createElement('video')
-            : new Image()
-
-          element.src = asset
-
+      try {
+        const loadPromises = assetsToPreload.map((asset) => {
           if (asset.endsWith('.mp4')) {
-            const videoElement = element as HTMLVideoElement
-            videoElement.oncanplaythrough = () => resolve()
-            videoElement.onerror = () =>
-              reject(new Error(`Failed to load video: ${asset}`))
+            // Preload video
+            const video = document.createElement('video')
+            video.src = asset
+
+            return new Promise<void>((resolve, reject) => {
+              video.onloadeddata = () => resolve() // Use a video-specific event
+              video.onerror = () =>
+                reject(new Error(`Failed to load video: ${asset}`))
+            })
           } else {
-            const imageElement = element as HTMLImageElement
-            imageElement.onload = () => resolve()
-            imageElement.onerror = () =>
-              reject(new Error(`Failed to load image: ${asset}`))
+            // Preload image
+            const img = new Image()
+            img.src = asset
+
+            return new Promise<void>((resolve, reject) => {
+              img.onload = () => resolve()
+              img.onerror = () =>
+                reject(new Error(`Failed to load image: ${asset}`))
+            })
           }
         })
-      })
 
-      Promise.all(preloadPromises)
-        .then(() => setIsLoading(false))
-        .catch((error) => {
-          console.error('Error loading assets:', error)
-          setIsLoading(false)
-        })
+        await Promise.all(loadPromises)
+        console.log('All assets preloaded!')
+      } catch (error) {
+        console.error('Error preloading assets:', error)
+      }
     }
 
-    preloadAssets()
+    preloadVideo() // Start by preloading the video
 
+    // Simulate a loading time for other resources
     const timer = setTimeout(() => {
       setIsLoading(false)
-      console.log('Fallback: Assets did not load in time.')
-    }, 5000)
+    }, 5000) // Adjust the loading time as needed
 
     return () => clearTimeout(timer)
   }, [])
 
+  // Trigger music once the user moves the mouse
+  const handleMouseMove = () => {
+    if (!hasHovered) {
+      setHasHovered(true)
+      // Trigger music start here if it's not already playing
+    }
+  }
+
   return (
     <MusicProvider>
-      <div className="app">
-        {isLoading ? (
+      <div className="app" onMouseMove={handleMouseMove}>
+        {isLoading || !isVideoReady ? (
           <div className="loadingAnimation">
             <img
               src="/images/ps.gif"
