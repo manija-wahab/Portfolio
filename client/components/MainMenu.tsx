@@ -172,6 +172,7 @@ const MainMenu = () => {
         <source
           src="/images/Japan/tokyo-street-sakura-moewalls-com.mp4"
           type="video/mp4"
+          rel="preload"
         />
         Your browser does not support HTML5 video.
       </video>
