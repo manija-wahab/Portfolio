@@ -5,6 +5,9 @@ WORKDIR /app
 COPY ["package.json", "package-lock.json*", "./"]
 RUN npm ci
 
+# Copy the knexfile.js explicitly into the container
+COPY server/db/knexfile.js ./knexfile.js  # Adjust path based on your actual structure
+
 # Copy all other files into the container
 COPY . .
 
@@ -18,8 +21,8 @@ RUN npm run build --if-present
 RUN npm prune --omit=dev
 
 # Run migrations and seeds before starting the app
-RUN npx knex migrate:latest
-RUN npx knex seed:run
+RUN npx knex migrate:latest --knexfile knexfile.js  # Specify knexfile.js explicitly
+RUN npx knex seed:run --knexfile knexfile.js  # Specify knexfile.js explicitly
 
 # Start the application
 CMD ["npm", "start"]
