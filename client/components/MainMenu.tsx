@@ -151,7 +151,14 @@ const MainMenu = () => {
           </button>
         </div>
       </div>
-      <video autoPlay muted loop id="bgVideo" className="backgroundVideo">
+      <video
+        autoPlay
+        muted
+        loop
+        id="bgVideo"
+        className="backgroundVideo"
+        rel="preload"
+      >
         <source
           src="/images/Japan/tokyo-street-sakura-moewalls-com.mp4"
           type="video/mp4"

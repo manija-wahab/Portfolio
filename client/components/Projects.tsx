@@ -174,6 +174,7 @@ const Projects = () => {
           {icons.length > 0 ? (
             icons.map((icon: string, index: number) => (
               <img
+                rel="preload"
                 src={`/images/inventory/${icon}`}
                 alt={`icon ${index}`}
                 key={index}
@@ -223,6 +224,7 @@ const Projects = () => {
       <div className="project-details">
         {data.map((project, index) => (
           <img
+            rel="preload"
             key={project.id}
             src={project.image}
             alt={project.name}

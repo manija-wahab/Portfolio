@@ -72,6 +72,7 @@ const AboutMe = () => {
             className="avatar"
             src="/images/ezgif.com-speed(2).gif"
             alt="avatar"
+            rel="preload"
           />
         </div>
         {data?.map((info) => (
@@ -110,7 +111,14 @@ const AboutMe = () => {
           </div>
         ))}
       </div>
-      <video autoPlay muted loop id="bgVideo" className="backgroundVideo">
+      <video
+        autoPlay
+        muted
+        loop
+        id="bgVideo"
+        className="backgroundVideo"
+        rel="preload"
+      >
         <source
           src="/images/Japan/japanese-town-cloudy-day-moewalls-com.mp4"
           type="video/mp4"

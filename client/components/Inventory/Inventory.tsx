@@ -78,6 +78,7 @@ const Inventory = () => {
               onClick={playSound}
             >
               <img
+                rel="preload"
                 src={skill.icon}
                 className="skill-image"
                 alt={skill.name}
@@ -95,7 +96,14 @@ const Inventory = () => {
           ))}
         </div>
       </div>
-      <video autoPlay muted loop id="bgVideo" className="backgroundVideo">
+      <video
+        autoPlay
+        muted
+        loop
+        id="bgVideo"
+        className="backgroundVideo"
+        rel="preload"
+      >
         <source
           src="/images/cyberpunk-blade-runner.1920x1080.mp4"
           type="video/mp4"
