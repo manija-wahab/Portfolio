@@ -15,7 +15,7 @@ export async function up(knex) {
     table.string('dislikes')
     table.string('combat_moves')
     table.string('achievements')
-    table.string('origin_story')
+    table.text('origin_story')
   })
 }
 

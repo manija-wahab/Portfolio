@@ -7,7 +7,7 @@ export async function up(knex) {
     table.increments('id').primary()
     table.string('name')
     table.string('icon')
-    table.string('experience')
+    table.text('experience')
     table.string('confidence_level').unsigned().defaultTo(0)
   })
 }

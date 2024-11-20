@@ -9,7 +9,7 @@ export async function up(knex) {
     table.string('url').notNullable()
     table.string('image').notNullable()
     table.string('duration')
-    table.string('summary')
+    table.text('summary')
     table.string('description')
     table.json('icons')
     table.json('developers')
