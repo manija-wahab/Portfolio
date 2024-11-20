@@ -1,12 +1,18 @@
 FROM node:20-alpine
-WORKDIR /app
+
+# Set the working directory to the root directory
+WORKDIR /
 
 # Copy package.json and package-lock.json
 COPY ["package.json", "package-lock.json*", "./"]
 RUN npm ci
 
-# Copy the knexfile.js explicitly into the container
+# Copy the knexfile.js into the container
 COPY server/db/knexfile.js ./knexfile.js 
+
+# Copy the migrations and seeds directories into the container
+COPY server/db/migrations ./migrations
+COPY server/db/seeds ./seeds
 
 # Copy all other files into the container
 COPY . .
@@ -21,8 +27,8 @@ RUN npm run build --if-present
 RUN npm prune --omit=dev
 
 # Run migrations and seeds before starting the app
-RUN npx knex migrate:latest --knexfile knexfile.js  
-RUN npx knex seed:run --knexfile knexfile.js 
+RUN npx knex migrate:latest --knexfile knexfile.js
+RUN npx knex seed:run --knexfile knexfile.js
 
 # Start the application
 CMD ["npm", "start"]
