@@ -67,7 +67,7 @@ const AboutMe = () => {
             </div>
           </div>
         ))}
-        <div className="avatarContainer">
+        <div className="avatarContainer" rel="preload">
           <img
             className="avatar"
             src="/images/ezgif.com-speed(2).gif"

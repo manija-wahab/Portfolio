@@ -2,7 +2,7 @@ import useSound from 'use-sound'
 import '../styles/menu.scss'
 import { useNavigate } from 'react-router-dom'
 import gsap from 'gsap'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 const MainMenu = () => {
   const soundUrl = '/sounds/90s-game-ui-2-185095.mp3'
@@ -11,6 +11,7 @@ const MainMenu = () => {
   const [playEnter] = useSound(soundEnter, { interrupt: true, preload: true })
   const [Display, setDisplay] = useState(false)
   const navigate = useNavigate()
+  const videoRef = useRef<HTMLVideoElement | null>(null)
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -72,6 +73,12 @@ const MainMenu = () => {
       link.click()
       document.body.removeChild(link)
     })
+  }
+
+  const handleVideoPlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play()
+    }
   }
 
   return (
@@ -151,13 +158,16 @@ const MainMenu = () => {
           </button>
         </div>
       </div>
+
       <video
-        autoPlay
+        ref={videoRef}
         muted
         loop
+        autoPlay
         id="bgVideo"
         className="backgroundVideo"
         rel="preload"
+        onMouseEnter={handleVideoPlay}
       >
         <source
           src="/images/Japan/tokyo-street-sakura-moewalls-com.mp4"
