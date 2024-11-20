@@ -14,6 +14,25 @@ const MainMenu = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
 
   useEffect(() => {
+    const video = videoRef.current
+    if (video) {
+      const handleCanPlayThrough = () => {
+        video.play()
+      }
+
+      video.addEventListener('canplaythrough', handleCanPlayThrough)
+
+      video.load()
+
+      return () => {
+        if (video) {
+          video.removeEventListener('canplaythrough', handleCanPlayThrough)
+        }
+      }
+    }
+  }, [])
+
+  useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'x' || event.key === 'X') {
         playEnter()
