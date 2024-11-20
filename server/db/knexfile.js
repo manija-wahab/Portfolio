@@ -35,13 +35,17 @@ export default {
   },
 
   production: {
-    client: 'sqlite3',
-    useNullAsDefault: true,
-    connection: {
-      filename: '/app/storage/prod.sqlite3',
-    },
+    client: 'pg',
+    connection: process.env.DATABASE_URL,
     pool: {
-      afterCreate: (conn, cb) => conn.run('PRAGMA foreign_keys = ON', cb),
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      directory: Path.join(__dirname, 'migrations'),
+    },
+    seeds: {
+      directory: Path.join(__dirname, 'seeds'),
     },
   },
 }
