@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     const preloadAssets = () => {
       const assetsToPreload = [
-        '/images/Japan/tokyo-street-sakura-moewalls-com.mp4',
+        '/sounds/2/two.mp3',
         '/images/levels/one.png',
         '/images/levels/twotwo.png',
         '/images/levels/enter.png',
@@ -19,20 +19,42 @@ function App() {
         '/images/cyberpunk-blade-runner.1920x1080.mp4',
       ]
 
-      assetsToPreload.forEach((asset) => {
-        const img = new Image()
-        const video = document.createElement('video')
+      const preloadPromises = assetsToPreload.map((asset) => {
+        return new Promise<void>((resolve, reject) => {
+          const element = asset.endsWith('.mp4')
+            ? document.createElement('video')
+            : new Image()
 
-        img.src = asset
-        video.src = asset
-        video.load()
+          element.src = asset
+
+          if (asset.endsWith('.mp4')) {
+            const videoElement = element as HTMLVideoElement
+            videoElement.oncanplaythrough = () => resolve()
+            videoElement.onerror = () =>
+              reject(new Error(`Failed to load video: ${asset}`))
+          } else {
+            const imageElement = element as HTMLImageElement
+            imageElement.onload = () => resolve()
+            imageElement.onerror = () =>
+              reject(new Error(`Failed to load image: ${asset}`))
+          }
+        })
       })
+
+      Promise.all(preloadPromises)
+        .then(() => setIsLoading(false))
+        .catch((error) => {
+          console.error('Error loading assets:', error)
+          setIsLoading(false)
+        })
     }
+
+    preloadAssets()
 
     const timer = setTimeout(() => {
       setIsLoading(false)
-      preloadAssets()
-    }, 3000)
+      console.log('Fallback: Assets did not load in time.')
+    }, 5000)
 
     return () => clearTimeout(timer)
   }, [])

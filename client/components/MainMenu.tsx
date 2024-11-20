@@ -14,25 +14,6 @@ const MainMenu = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
 
   useEffect(() => {
-    const video = videoRef.current
-    if (video) {
-      const handleCanPlayThrough = () => {
-        video.play()
-      }
-
-      video.addEventListener('canplaythrough', handleCanPlayThrough)
-
-      video.load()
-
-      return () => {
-        if (video) {
-          video.removeEventListener('canplaythrough', handleCanPlayThrough)
-        }
-      }
-    }
-  }, [])
-
-  useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'x' || event.key === 'X') {
         playEnter()
@@ -185,13 +166,12 @@ const MainMenu = () => {
         autoPlay
         id="bgVideo"
         className="backgroundVideo"
-        rel="preload"
+        preload="auto"
         onMouseEnter={handleVideoPlay}
       >
         <source
           src="/images/Japan/tokyo-street-sakura-moewalls-com.mp4"
           type="video/mp4"
-          rel="preload"
         />
         Your browser does not support HTML5 video.
       </video>
