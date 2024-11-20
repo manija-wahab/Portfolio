@@ -3,6 +3,8 @@ import * as URL from 'node:url'
 
 const __filename = URL.fileURLToPath(import.meta.url)
 const __dirname = Path.dirname(__filename)
+const DATABASE_URL =
+  'postgresql://postgres:rzumwKVNrSSbFkHKtZZFeVqFFrfJIhNE@postgres.railway.internal:5432/railway'
 
 export default {
   development: {
@@ -36,7 +38,7 @@ export default {
 
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
+    connection: DATABASE_URL,
     pool: {
       min: 2,
       max: 10,
