@@ -6,11 +6,12 @@ import Inventory from './components/Inventory/Inventory.tsx'
 import Item from './components/Inventory/Item.tsx'
 import MainMenu from './components/MainMenu.tsx'
 import Projects from './components/Projects.tsx'
+import Loading from './components/Loading.tsx'
 
 export default createRoutesFromElements(
   <>
     <Route path="/" element={<App />}>
-      <Route index element={<MainMenu />} />
+      <Route index element={<Loading />} />
       <Route path="/AboutMe" element={<AboutMe />} />
       <Route path="/Levels" element={<Levels />} />
       <Route path="/Inventory" element={<Inventory />} />

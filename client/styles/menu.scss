@@ -143,14 +143,14 @@
   z-index: 10000;
   width: 100%;
   padding: calc(0.5vh + 0.5vw);
-  background-color: rgba(42, 22, 71, 0.427);
+  // background-color: rgba(42, 22, 71, 0.427);
   animation: slowBlink 3s infinite;
   color: white;
   font-family: spacer;
-  font-size: calc(1.5vh + 1.5vw);
-  text-shadow:  0 0 calc(1vh + 1vw) rgb(255, 255, 255);
+  font-size: calc(2vh + 2vw);
+  // text-shadow:  0 0 calc(1vh + 1vw) rgb(255, 255, 255);
   text-align: center;
-  top: 5%;
+  bottom: 5%;
 }
 
 @keyframes slowBlink {

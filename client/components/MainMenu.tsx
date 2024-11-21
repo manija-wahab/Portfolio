@@ -2,7 +2,7 @@ import useSound from 'use-sound'
 import '../styles/menu.scss'
 import { useNavigate } from 'react-router-dom'
 import gsap from 'gsap'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const MainMenu = () => {
   const soundUrl = '/sounds/90s-game-ui-2-185095.mp3'
@@ -11,27 +11,6 @@ const MainMenu = () => {
   const [playEnter] = useSound(soundEnter, { interrupt: true, preload: true })
   const [Display, setDisplay] = useState(false)
   const navigate = useNavigate()
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'x' || event.key === 'X') {
-        playEnter()
-        handleClick('/Levels')
-      }
-    }
-
-    window.addEventListener(
-      'keydown',
-      handleKeyDown as unknown as EventListener,
-    )
-
-    return () => {
-      window.removeEventListener(
-        'keydown',
-        handleKeyDown as unknown as EventListener,
-      )
-    }
-  }, [playEnter])
 
   const handleMouseEnter = () => {
     play()
@@ -77,7 +56,7 @@ const MainMenu = () => {
   return (
     <div className="menu-container">
       <div className="overlay1"></div>
-      <div className="start">Press X to start game</div>
+
       {Display && (
         <div className="details-box">
           <button
