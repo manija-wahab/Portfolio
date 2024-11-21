@@ -2,6 +2,7 @@ import React, { useEffect, useState, Suspense } from 'react'
 import useSound from 'use-sound'
 import '../styles/menu.scss'
 import gsap from 'gsap'
+import { useNavigate } from 'react-router-dom'
 
 const MainMenu = React.lazy(() => import('./MainMenu'))
 
@@ -11,6 +12,7 @@ const Loading = () => {
   const [isReady, setIsReady] = useState(false)
   const [isPressed, setIsPressed] = useState(false)
   const [hideBackground, setHideBackground] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     const preloadMainMenu = setTimeout(() => {
@@ -31,6 +33,7 @@ const Loading = () => {
           repeat: 2,
           yoyo: true,
           onComplete: () => {
+            navigate('/MainMenu')
             gsap.to('.backgroundVideo2', {
               opacity: 0,
               duration: 0.1,
