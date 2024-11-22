@@ -36,8 +36,7 @@ export default {
 
   production: {
     client: 'pg',
-    connection:
-      'postgresql://postgres:rzumwKVNrSSbFkHKtZZFeVqFFrfJIhNE@junction.proxy.rlwy.net:21245/railway',
+    connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
       max: 10,
