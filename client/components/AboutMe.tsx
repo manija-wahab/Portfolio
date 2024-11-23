@@ -9,7 +9,9 @@ const AboutMe = () => {
   const { data } = useQuery({
     queryKey: ['info'],
     queryFn: async () => {
-      const response = await request.get('/api/v1/aboutMe')
+      const response = await request.get(
+        '/.netlify/functions/fetchData?type=aboutMe',
+      )
       return response.body as AboutMe[]
     },
   })
