@@ -15,3 +15,5 @@
 
 [[plugins]]
   package = "netlify-plugin-image-optim"
+  [plugins.inputs]
+    debug = true
