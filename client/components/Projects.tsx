@@ -8,10 +8,10 @@ import useSound from 'use-sound'
 import gsap from 'gsap'
 
 const Projects = () => {
-  const { data = [] } = useQuery({
+  const { data = [], isPending } = useQuery({
     queryKey: ['project'],
     queryFn: async () =>
-      (await request.get('/api/v1/projects')).body as Project[],
+      (await request.get('/.netlify/functions/projects')).body as Project[],
   })
 
   const [activeIndex, setActiveIndex] = useState(0)
@@ -96,6 +96,21 @@ const Projects = () => {
   const icons: string[] = Array.isArray(currentProject.icons)
     ? currentProject.icons
     : JSON.parse(currentProject.icons || '[]')
+
+  if (isPending)
+    return (
+      <video
+        autoPlay
+        muted
+        loop
+        id="bgVideo"
+        className="backgroundVideo2"
+        preload="auto"
+      >
+        <source src="/images/loadingg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    )
 
   return (
     <div className="project-viewer">

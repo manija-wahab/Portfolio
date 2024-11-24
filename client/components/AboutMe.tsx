@@ -6,12 +6,10 @@ import { useNavigate } from 'react-router-dom'
 import useSound from 'use-sound'
 
 const AboutMe = () => {
-  const { data } = useQuery({
+  const { data, isPending } = useQuery({
     queryKey: ['info'],
     queryFn: async () => {
-      const response = await request.get(
-        '/.netlify/functions/fetchData?type=aboutMe',
-      )
+      const response = await request.get('/.netlify/functions/aboutMe')
       return response.body as AboutMe[]
     },
   })
@@ -21,6 +19,21 @@ const AboutMe = () => {
   const [playEnter] = useSound(soundEnter, { interrupt: true })
   const [play] = useSound(soundUrl, { interrupt: true, volume: 0.8 })
   const navigate = useNavigate()
+
+  if (isPending)
+    return (
+      <video
+        autoPlay
+        muted
+        loop
+        id="bgVideo"
+        className="backgroundVideo2"
+        preload="auto"
+      >
+        <source src="/images/loadingg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    )
 
   const handleMouseEnter = () => {
     play()

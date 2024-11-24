@@ -9,10 +9,10 @@ import gsap from 'gsap'
 import { useEffect } from 'react'
 
 const Inventory = () => {
-  const { data = [] } = useQuery({
+  const { data = [], isPending } = useQuery({
     queryKey: ['skills'],
     queryFn: async () => {
-      const response = await request.get('/api/v1/skills')
+      const response = await request.get('/.netlify/functions/skills')
       return response.body as Item[]
     },
   })
@@ -54,6 +54,21 @@ const Inventory = () => {
 
   const skills = Array.isArray(data) ? data : []
   const emptyItemsCount = Math.ceil((data?.length ?? 0 + 1) / 10) * 50
+
+  if (isPending)
+    return (
+      <video
+        autoPlay
+        muted
+        loop
+        id="bgVideo"
+        className="backgroundVideo2"
+        preload="auto"
+      >
+        <source src="/images/loadingg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    )
 
   return (
     <div className="inventory-container">

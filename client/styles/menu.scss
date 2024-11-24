@@ -140,15 +140,18 @@
 
 .start {
   position: absolute;
-  z-index: 10000;
+  z-index: 1000000;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: calc(0.5vh + 0.5vw);
-  // background-color: rgba(42, 22, 71, 0.427);
+  background-color: rgba(0, 0, 0, 0.468);
   animation: slowBlink 3s infinite;
+  // text-shadow:  0 0 calc(1vh + 1vw) rgb(255, 255, 255);
   color: white;
   font-family: spacer;
   font-size: calc(2vh + 2vw);
-  // text-shadow:  0 0 calc(1vh + 1vw) rgb(255, 255, 255);
   text-align: center;
   bottom: 5%;
 }
@@ -158,6 +161,9 @@
     opacity: 0;
   }
   50% {
+    opacity: 1;
+  }
+  70% {
     opacity: 1;
   }
   100% {
@@ -175,4 +181,8 @@
   opacity: 0; 
   pointer-events: none;
   z-index: 99999999;
+}
+
+.backgroundVideo2 {
+  filter: hue-rotate(40deg) brightness(1);
 }

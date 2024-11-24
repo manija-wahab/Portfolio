@@ -1,45 +1,28 @@
-const fetch = require('node-fetch')
+import { Router } from 'express'
+// import checkJwt, { JwtRequest } from '../auth0.ts'
+// import { StatusCodes } from 'http-status-codes'
 
-export default async () => {
+import * as db from '../db/projects.ts'
+const router = Router()
+// ╔════════════════╗
+// ║   Get Routes   ║
+// ╚════════════════╝
+router.get('/', async (req, res) => {
   try {
-    // Fetch data from all your endpoints
-    const aboutMeResponse = await fetch(
-      'https://your-backend-url.up.railway.app/api/v1/aboutMe',
-    )
-    const aboutMeData = await aboutMeResponse.json()
-
-    const skillsResponse = await fetch(
-      'https://your-backend-url.up.railway.app/api/v1/skills',
-    )
-    const skillsData = await skillsResponse.json()
-
-    const menuResponse = await fetch(
-      'https://your-backend-url.up.railway.app/api/v1/menus',
-    )
-    const menuData = await menuResponse.json()
-
-    const projectsResponse = await fetch(
-      'https://your-backend-url.up.railway.app/api/v1/projects',
-    )
-    const projectsData = await projectsResponse.json()
-
-    // Combine all data into one object or array
-    const responseData = {
-      aboutMe: aboutMeData,
-      skills: skillsData,
-      menu: menuData,
-      projects: projectsData,
-    }
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify(responseData),
-    }
+    const project = await db.getAllProjects()
+    res.json(project)
   } catch (error) {
-    console.error(error)
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ message: 'Failed to fetch data' }),
-    }
+    console.log(error)
+    res.status(500).json({ message: 'Something went wrong' })
   }
-}
+})
+// ╔═════════════════╗
+// ║   Post Routes   ║
+// ╚═════════════════╝
+// ╔══════════════════╗
+// ║   Patch Routes   ║
+// ╚══════════════════╝
+// ╔═══════════════════╗
+// ║   Delete Routes   ║
+// ╚═══════════════════╝
+export default router

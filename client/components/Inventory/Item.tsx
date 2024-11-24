@@ -9,11 +9,11 @@ import useSound from 'use-sound'
 const Item = () => {
   const { id } = useParams()
 
-  const { data } = useQuery({
-    queryKey: ['skills'],
+  const { data, isPending } = useQuery({
+    queryKey: ['skills', id],
     queryFn: async () => {
-      const response = await request.get(`/api/v1/skills/${id}`)
-      return response.body
+      const response = await request.get(`/.netlify/functions/item/${id}`)
+      return response.body as Item
     },
   })
 
@@ -34,6 +34,21 @@ const Item = () => {
     console.log('played enter sound')
     navigate('/Inventory')
   }
+
+  if (isPending)
+    return (
+      <video
+        autoPlay
+        muted
+        loop
+        id="bgVideo"
+        className="backgroundVideo2"
+        preload="auto"
+      >
+        <source src="/images/loadingg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    )
 
   return (
     <div className="item-container">

@@ -14,6 +14,56 @@ const Loading = () => {
   const [hideBackground, setHideBackground] = useState(false)
   const navigate = useNavigate()
 
+  const triggerStart = () => {
+    if (isReady) {
+      playEnter()
+      gsap.to('.overlay1', {
+        opacity: 1,
+        duration: 0.1,
+        repeat: 2,
+        yoyo: true,
+        onComplete: () => {
+          navigate('/MainMenu')
+          gsap.to('.backgroundVideo2', {
+            opacity: 0,
+            duration: 0.1,
+            onComplete: () => {
+              setHideBackground(true)
+              setIsPressed(true)
+            },
+          })
+          gsap.to('.overlay1', { opacity: 0, duration: 0.1 })
+        },
+      })
+    }
+  }
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if ((event.key === 'x' || event.key === 'X') && isReady) {
+        triggerStart()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isReady])
+
+  useEffect(() => {
+    const handleScreenClick = () => {
+      triggerStart()
+    }
+
+    window.addEventListener('click', handleScreenClick)
+
+    return () => {
+      window.removeEventListener('click', handleScreenClick)
+    }
+  }, [isReady])
+
   useEffect(() => {
     const preloadMainMenu = setTimeout(() => {
       setIsReady(true)
@@ -22,63 +72,28 @@ const Loading = () => {
     return () => clearTimeout(preloadMainMenu)
   }, [])
 
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if ((event.key === 'x' || event.key === 'X') && isReady) {
-        playEnter()
-
-        gsap.to('.overlay1', {
-          opacity: 1,
-          duration: 0.1,
-          repeat: 2,
-          yoyo: true,
-          onComplete: () => {
-            navigate('/MainMenu')
-            gsap.to('.backgroundVideo2', {
-              opacity: 0,
-              duration: 0.1,
-              onComplete: () => {
-                setHideBackground(true)
-                setIsPressed(true)
-              },
-            })
-            gsap.to('.overlay1', { opacity: 0, duration: 0.1 })
-          },
-        })
-      }
-    }
-
-    window.addEventListener(
-      'keydown',
-      handleKeyDown as unknown as EventListener,
-    )
-
-    return () => {
-      window.removeEventListener(
-        'keydown',
-        handleKeyDown as unknown as EventListener,
-      )
-    }
-  }, [playEnter, isReady])
-
   return (
     <div>
       <div className="overlay1"></div>
 
       {!isPressed && (
         <div className="start">
-          {isReady ? 'Press X to start game' : 'Loading...'}
+          {isReady ? 'Press X to start the game' : 'Loading...'}
         </div>
       )}
 
       {!hideBackground && (
-        <img
+        <video
+          autoPlay
+          muted
+          loop
           id="bgVideo"
           className="backgroundVideo2"
-          rel="preload"
-          src="/images/psa.gif"
-          alt="playstation icons"
-        />
+          preload="auto"
+        >
+          <source src="/images/loadingg.mp4" type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
       )}
 
       <Suspense fallback={null}>{<MainMenu />}</Suspense>
