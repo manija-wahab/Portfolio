@@ -14,5 +14,7 @@
   status = 200
 
 [[plugins]]
-package = "netlify-plugin-cloudinary"
-inputs = { cloudinary_url = "cloudinary://412726527489346:blOwLP0QhSFaBdbuEA7kEwuR2Lo@dey3ta01p" }
+  package = "netlify-plugin-cloudinary"
+  [plugins.inputs]
+  cloudName = "dey3ta01p" # Replace this with your Cloudinary Cloud Name
+  imagesPath = "public/images" 
