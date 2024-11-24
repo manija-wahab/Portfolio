@@ -15,7 +15,3 @@
 
 [[plugins]]
   package = "netlify-plugin-image-optim"
-  [plugins.inputs]
-    quality = 70 
-    images = "public/images"  
-    debug = true 
