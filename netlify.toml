@@ -14,6 +14,5 @@
   status = 200
 
 [[plugins]]
-  package = "netlify-plugin-image-optim"
-  [plugins.inputs]
-    debug = true
+package = "netlify-plugin-cloudinary"
+inputs = { cloudinary_url = "cloudinary://412726527489346:blOwLP0QhSFaBdbuEA7kEwuR2Lo@dey3ta01p" }
