@@ -120,7 +120,7 @@ const Inventory = () => {
         rel="preload"
       >
         <source
-          src="/images/cyberpunk-blade-runner.1920x1080.mp4"
+          src="https://res.cloudinary.com/dey3ta01p/video/upload/v1732492918/cyberpunk-blade-runner.1920x1080_cvi9zz.mp4"
           type="video/mp4"
         ></source>
         Your browser does not support HTML5 video.

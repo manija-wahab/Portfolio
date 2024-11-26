@@ -83,12 +83,19 @@ const AboutMe = () => {
           </div>
         ))}
         <div className="avatarContainer">
-          <img
+          <video
             className="avatar"
-            src="/images/ezgif.com-speed(2).gif"
-            alt="avatar"
+            src="https://res.cloudinary.com/dey3ta01p/video/upload/v1732512147/ezgif.com-gif-to-webm-converter_d1qjzi.webm"
+            autoPlay
+            muted
+            loop
             rel="preload"
-          />
+          >
+            <source
+              src="https://res.cloudinary.com/dey3ta01p/video/upload/v1732512147/ezgif.com-gif-to-webm-converter_d1qjzi.webm"
+              type="video/mp4"
+            ></source>
+          </video>
         </div>
         {data?.map((info) => (
           <div key={info.id} className="info-set-2 info-container">
@@ -135,7 +142,7 @@ const AboutMe = () => {
         rel="preload"
       >
         <source
-          src="/images/Japan/japanese-town-cloudy-day-moewalls-com.mp4"
+          src="https://res.cloudinary.com/dey3ta01p/video/upload/v1732498932/japanese-town-cloudy-day-moewalls-com_ik9sjt.mp4"
           type="video/mp4"
         ></source>
         Your browser does not support HTML5 video.
