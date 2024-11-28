@@ -22,17 +22,32 @@ const AboutMe = () => {
 
   if (isPending)
     return (
-      <video
-        autoPlay
-        muted
-        loop
-        id="bgVideo"
-        className="backgroundVideo2"
-        preload="auto"
-      >
-        <source src="/images/loadingg.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <div className="returnLoading">
+        <div className="loading-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40%"
+            height="40%"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={'animate-spin'}
+          >
+            <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+          </svg>
+          <div className="start">Loading...</div>
+        </div>
+
+        <img
+          src="https://res.cloudinary.com/dey3ta01p/image/upload/v1732589872/one_gwoimj.png"
+          id="bgVideo"
+          className="backgroundVideo"
+          alt="blur"
+        />
+      </div>
     )
 
   const handleMouseEnter = () => {

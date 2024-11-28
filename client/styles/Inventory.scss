@@ -155,7 +155,14 @@
 
 .item-text-box {
   overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
 }
+
+.item-text-box::-webkit-scrollbar {
+  display: none; 
+}
+
 
 .item-text {
   font-size: calc(1vh + 1vw);
@@ -232,6 +239,29 @@
   padding: calc(0.5vh + 0.5vw) calc(1vh + 1vw);
   text-shadow: 0 0 calc(1vh + 1vw) rgb(227, 39, 67);
   font-size: calc(3vh + 3vw);
+}
+
+.animate-spin {
+  animation: spinload 1s linear infinite;
+  filter: drop-shadow(0 0 calc(1vh + 1vw) white);
+}
+
+.svgBox {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes spinload {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .overlay {

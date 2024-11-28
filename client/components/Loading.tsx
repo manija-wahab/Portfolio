@@ -3,6 +3,7 @@ import useSound from 'use-sound'
 import '../styles/menu.scss'
 import gsap from 'gsap'
 import { useNavigate } from 'react-router-dom'
+import '../styles/main.scss'
 
 const MainMenu = React.lazy(() => import('./MainMenu'))
 
@@ -24,7 +25,7 @@ const Loading = () => {
         yoyo: true,
         onComplete: () => {
           navigate('/MainMenu')
-          gsap.to('.backgroundVideo2', {
+          gsap.to('.animate-spin', {
             opacity: 0,
             duration: 0.1,
             onComplete: () => {
@@ -76,24 +77,28 @@ const Loading = () => {
     <div>
       <div className="overlay1"></div>
 
-      {!isPressed && (
-        <div className="start">
-          {isReady ? 'Press X to start the game' : 'Loading...'}
-        </div>
-      )}
-
       {!hideBackground && (
-        <video
-          autoPlay
-          muted
-          loop
-          id="bgVideo"
-          className="backgroundVideo2"
-          preload="auto"
-        >
-          <source src="/images/loadingg.mp4" type="video/mp4" />
-          Your browser does not support HTML5 video.
-        </video>
+        <div className="loading-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40%"
+            height="40%"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className={'animate-spin'}
+          >
+            <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+          </svg>
+          {!isPressed && (
+            <div className="start">
+              {isReady ? 'Press X to start' : 'Loading...'}
+            </div>
+          )}
+        </div>
       )}
 
       <Suspense fallback={null}>{<MainMenu />}</Suspense>
