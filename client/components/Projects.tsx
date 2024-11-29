@@ -129,7 +129,10 @@ const Projects = () => {
   return (
     <div className="project-viewer">
       <button
-        style={{ textShadow: ' 0 0 calc(1vh + 1vw)' + color, color: color }}
+        style={{
+          textShadow: ' 0 0 calc(1vh + 1vw)' + color,
+          color: `${color.replace(/rgba\((\d+), (\d+), (\d+), .+\)/, 'rgb($1, $2, $3)')}`,
+        }}
         className="returnBut3"
         onClick={handleClick}
         onMouseEnter={playSound}
@@ -140,7 +143,10 @@ const Projects = () => {
         <div className="maps-content-box">
           <h1
             className="map-h1"
-            style={{ textShadow: ' 0 0 calc(1vh + 1vw)' + color, color: color }}
+            style={{
+              textShadow: ' 0 0 calc(1vh + 1vw)' + color,
+              color: `${color.replace(/rgba\((\d+), (\d+), (\d+), .+\)/, 'rgb($1, $2, $3)')}`,
+            }}
           >
             Map {currentProject.name}
           </h1>
@@ -151,7 +157,7 @@ const Projects = () => {
                 <h3 className="map-details">
                   <span
                     style={{
-                      color: color,
+                      color: `${color.replace(/rgba\((\d+), (\d+), (\d+), .+\)/, 'rgb($1, $2, $3)')}`,
                     }}
                   >
                     Total Time:
@@ -161,7 +167,7 @@ const Projects = () => {
                 <h3 className="map-details devs">
                   <span
                     style={{
-                      color: color,
+                      color: `${color.replace(/rgba\((\d+), (\d+), (\d+), .+\)/, 'rgb($1, $2, $3)')}`,
                     }}
                   >
                     Developers:
@@ -179,7 +185,7 @@ const Projects = () => {
                 onClick={playSound}
                 onMouseEnter={playSound}
                 style={{
-                  color: color,
+                  color: `${color.replace(/rgba\((\d+), (\d+), (\d+), .+\)/, 'rgb($1, $2, $3)')}`,
                 }}
               >
                 Enter Map!
@@ -188,7 +194,7 @@ const Projects = () => {
             <div className="map-about-container">
               <h3
                 style={{
-                  color: color,
+                  color: `${color.replace(/rgba\((\d+), (\d+), (\d+), .+\)/, 'rgb($1, $2, $3)')}`,
                 }}
               >
                 About this Map
