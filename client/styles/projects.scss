@@ -140,7 +140,7 @@ body {
   aspect-ratio: 1/1;
   padding: calc(1vh + 1vw);
   box-sizing: border-box;
-  height: 40%;
+  height: calc(30% + 2vw);
   border-radius: calc(0.5vh + 0.5vw);
 }
 
@@ -313,7 +313,6 @@ body {
   .map3 img {
     height: 90%;
     padding: 2%;
-
   }
 
   .project-nav-contain button {

@@ -59,23 +59,23 @@ const Projects = () => {
 
   useEffect(() => {
     if (activeIndex === 0) {
-      setColor('#5ca4eb')
+      setColor('rgba(92, 164, 235, 0.8)')
     } else if (activeIndex === 1) {
-      setColor('#74A9FC')
+      setColor('rgba(116, 169, 252, 0.8)')
     } else if (activeIndex === 2) {
-      setColor('#AB9AD9')
+      setColor('rgba(171, 154, 217, 0.8)')
     } else if (activeIndex === 3) {
-      setColor('#01cea5')
+      setColor('rgba(1, 206, 165, 0.8)')
     } else if (activeIndex === 4) {
-      setColor('#498be1')
+      setColor('rgba(73, 139, 225, 0.8)')
     } else if (activeIndex === 5) {
-      setColor('#f92f2f')
+      setColor('rgba(249, 47, 47, 0.8)')
     } else if (activeIndex === 6) {
-      setColor('#E185B7')
+      setColor('rgba(225, 133, 183, 0.8)')
     } else if (activeIndex === 7) {
-      setColor('#6BDBFF')
+      setColor('rgba(107, 219, 255, 0.8)')
     } else if (activeIndex === 8) {
-      setColor('#BCE13A')
+      setColor('rgba(188, 225, 58, 0.8)')
     } else {
       setColor('')
     }
@@ -208,8 +208,8 @@ const Projects = () => {
                 alt={`icon ${index}`}
                 key={index}
                 style={{
-                  filter: `drop-shadow(0 0 calc(1vh + 1vw) ${color})`,
-                  border: 'calc(0.1vh + 0.1vw) solid' + color,
+                  filter: `drop-shadow(0 0 calc(1vh + 1vw) ${color.replace(/rgba\((\d+), (\d+), (\d+), .+\)/, 'rgb($1, $2, $3)')})`,
+                  border: `calc(0.1vh + 0.1vw) solid ${color.replace(/rgba\((\d+), (\d+), (\d+), .+\)/, 'rgb($1, $2, $3)')}`,
                 }}
               />
             ))

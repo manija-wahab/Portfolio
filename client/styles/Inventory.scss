@@ -40,7 +40,7 @@
   font-family: rene;
   font-size: calc(3vh + 3vw);
   color: rgb(227, 39, 67);
-  text-shadow: 0 0 calc(2vh + 2vw) rgb(227, 39, 67), 0 0 calc(1vh + 1vw) rgb(227, 39, 67);
+  text-shadow: 0 0 calc(2vh + 2vw) rgba(227, 39, 67, 0.9), 0 0 calc(1vh + 1vw) rgba(227, 39, 67, 0.9);
 }
 
 .skills-text {
@@ -129,7 +129,7 @@
 
 .item-experience-title {
   color: rgb(227, 39, 67);
-  text-shadow: 0 0 calc(1vh + 1vw) rgb(227, 39, 67);
+  text-shadow: 0 0 calc(1vh + 1vw) rgba(227, 39, 67, 0.9);
   font-size: calc(3vh + 3vw);
 }
 
@@ -148,7 +148,7 @@
 }
 
 .item-name {
-  text-shadow: 0 0 calc(1vh + 1vw) rgb(255, 255, 255);
+  text-shadow: 0 0 calc(1vh + 1vw) rgba(255, 255, 255, 0.9);
   font-size: calc(1.5vh + 1.5vw);
 
 }
@@ -216,7 +216,7 @@
   top: 0;
   left: 0;
   color: rgb(227, 39, 67);
-  text-shadow: 0 0 calc(1vh + 1vw) rgb(227, 39, 67);
+  text-shadow: 0 0 calc(1vh + 1vw) rgba(227, 39, 67, 0.9);
   background-color: transparent;
   paint-order: stroke fill;
   text-transform: uppercase;
@@ -237,7 +237,7 @@
 .itemB {
   color: rgb(227, 39, 67);
   padding: calc(0.5vh + 0.5vw) calc(1vh + 1vw);
-  text-shadow: 0 0 calc(1vh + 1vw) rgb(227, 39, 67);
+  text-shadow: 0 0 calc(1vh + 1vw) rgba(227, 39, 67, 0.9);
   font-size: calc(3vh + 3vw);
 }
 

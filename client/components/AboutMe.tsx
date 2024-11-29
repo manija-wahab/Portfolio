@@ -98,19 +98,20 @@ const AboutMe = () => {
           </div>
         ))}
         <div className="avatarContainer">
-          <video
-            className="avatar"
-            src="https://res.cloudinary.com/dey3ta01p/video/upload/v1732512147/ezgif.com-gif-to-webm-converter_d1qjzi.webm"
-            autoPlay
-            muted
-            loop
-            rel="preload"
-          >
-            <source
-              src="https://res.cloudinary.com/dey3ta01p/video/upload/v1732512147/ezgif.com-gif-to-webm-converter_d1qjzi.webm"
-              type="video/mp4"
-            ></source>
-          </video>
+          {navigator.userAgent.includes('Safari') ? (
+            <img
+              className="avatar"
+              src="https://res.cloudinary.com/dey3ta01p/image/upload/v1732863238/ezgif.com-optimize_iquesc.gif"
+              alt="Avatar animation"
+            />
+          ) : (
+            <video className="avatar" autoPlay muted loop playsInline>
+              <source
+                src="https://res.cloudinary.com/dey3ta01p/video/upload/v1732512147/ezgif.com-gif-to-webm-converter_d1qjzi.webm"
+                type="video/webm"
+              />
+            </video>
+          )}
         </div>
         {data?.map((info) => (
           <div key={info.id} className="info-set-2 info-container">
