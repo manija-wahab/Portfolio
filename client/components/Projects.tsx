@@ -19,7 +19,7 @@ const Projects = () => {
   const scrollRef = useRef<HTMLDivElement>(null)
   const soundUrl = '/sounds/interface-4-204501.mp3'
   const soundEnter = '/sounds/arcade-ui-14-229514.mp3'
-  const [play] = useSound(soundUrl, { interrupt: true, volume: 0.3 })
+  const [play] = useSound(soundUrl, { interrupt: true, volume: 0.5 })
   const [playEnter] = useSound(soundEnter, { interrupt: true })
 
   useEffect(() => {
@@ -59,23 +59,23 @@ const Projects = () => {
 
   useEffect(() => {
     if (activeIndex === 0) {
-      setColor('rgba(92, 164, 235, 0.3)')
+      setColor('rgba(92, 164, 235, 0.5)')
     } else if (activeIndex === 1) {
-      setColor('rgba(116, 169, 252, 0.3)')
+      setColor('rgba(116, 169, 252, 0.5)')
     } else if (activeIndex === 2) {
-      setColor('rgba(171, 154, 217, 0.3)')
+      setColor('rgba(171, 154, 217, 0.5)')
     } else if (activeIndex === 3) {
-      setColor('rgba(1, 206, 165, 0.3)')
+      setColor('rgba(1, 206, 165, 0.5)')
     } else if (activeIndex === 4) {
-      setColor('rgba(73, 139, 225, 0.3)')
+      setColor('rgba(73, 139, 225, 0.5)')
     } else if (activeIndex === 5) {
-      setColor('rgba(249, 47, 47, 0.3)')
+      setColor('rgba(249, 47, 47, 0.5)')
     } else if (activeIndex === 6) {
-      setColor('rgba(225, 133, 183, 0.3)')
+      setColor('rgba(225, 133, 183, 0.5)')
     } else if (activeIndex === 7) {
-      setColor('rgba(107, 219, 255, 0.3)')
+      setColor('rgba(107, 219, 255, 0.5)')
     } else if (activeIndex === 8) {
-      setColor('rgba(188, 225, 58, 0.3)')
+      setColor('rgba(188, 225, 58, 0.5)')
     } else {
       setColor('')
     }

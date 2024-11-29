@@ -72,7 +72,7 @@
   z-index: 50000;
   color: white;
   paint-order: stroke fill;
-  text-shadow: calc(0.2vh + 0.2vw) calc(0.2vh + 0.2vw) calc(1vh + 1vw) rgba(0, 0, 0, 0.5);
+  text-shadow: calc(0.2vh + 0.2vw) calc(0.2vh + 0.2vw) calc(1vh + 1vw) hsla(0, 0, 0, 0.9);
   -webkit-text-stroke: calc(0.3vh + 0.3vw) rgba(98, 191, 207, 0.724);
   text-transform: uppercase;
   font-family: d;
