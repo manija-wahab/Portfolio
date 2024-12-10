@@ -10,8 +10,11 @@ import gsap from 'gsap'
 const Projects = () => {
   const { data = [], isPending } = useQuery({
     queryKey: ['project'],
-    queryFn: async () =>
-      (await request.get('/.netlify/functions/projects')).body as Project[],
+    queryFn: async () => {
+      const projects = (await request.get('/.netlify/functions/projects'))
+        .body as Project[]
+      return projects.sort((a, b) => a.id - b.id)
+    },
   })
 
   const [activeIndex, setActiveIndex] = useState(0)
