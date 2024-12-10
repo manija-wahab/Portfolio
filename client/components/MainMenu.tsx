@@ -139,7 +139,7 @@ const MainMenu = () => {
         preload="auto"
       >
         <source
-          src="https://res.cloudinary.com/dey3ta01p/video/upload/v1732499077/tokyo-street-sakura-moewalls-com_asnib9.mp4"
+          src="https://res.cloudinary.com/dory8iywk/video/upload/v1733798342/tokyo-street-sakura-moewalls-com_twoq2l.mp4"
           type="video/mp4"
         />
         Your browser does not support HTML5 video.

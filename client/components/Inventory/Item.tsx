@@ -122,7 +122,7 @@ const Item = () => {
 
       <video autoPlay muted loop id="bgVideo" className="backgroundVideo">
         <source
-          src="https://res.cloudinary.com/dey3ta01p/video/upload/v1732492918/cyberpunk-blade-runner.1920x1080_cvi9zz.mp4"
+          src="https://res.cloudinary.com/dory8iywk/video/upload/v1733802347/cyberpunk-blade-runner.1920x1080_lqolae.mp4"
           type="video/mp4"
         ></source>
         Your browser does not support HTML5 video.

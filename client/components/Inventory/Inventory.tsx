@@ -78,7 +78,7 @@ const Inventory = () => {
           <div className="start">Loading...</div>
         </div>
         <img
-          src="https://res.cloudinary.com/dey3ta01p/image/upload/v1732589899/two_by21fc.png"
+          src="https://res.cloudinary.com/dory8iywk/image/upload/v1733798357/two_oomii1.png"
           id="bgVideo"
           className="backgroundVideo"
           alt="blur"
@@ -136,7 +136,7 @@ const Inventory = () => {
         rel="preload"
       >
         <source
-          src="https://res.cloudinary.com/dey3ta01p/video/upload/v1732492918/cyberpunk-blade-runner.1920x1080_cvi9zz.mp4"
+          src="https://res.cloudinary.com/dory8iywk/video/upload/v1733802347/cyberpunk-blade-runner.1920x1080_lqolae.mp4"
           type="video/mp4"
         ></source>
         Your browser does not support HTML5 video.

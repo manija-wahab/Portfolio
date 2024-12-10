@@ -12,9 +12,3 @@
   from = "/*"
   to = "/index.html"
   status = 200
-
-[[plugins]]
-  package = "netlify-plugin-cloudinary"
-  [plugins.inputs]
-  cloudName = "dey3ta01p" # Replace this with your Cloudinary Cloud Name
-  imagesPath = "public/images" 

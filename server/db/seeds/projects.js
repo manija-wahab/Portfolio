@@ -22,7 +22,8 @@ export async function seed(knex) {
       id: 1,
       name: 'Time Jump',
       url: 'https://time-jump.pushed.nz/',
-      image: '/images/maps/time-jump.png',
+      image:
+        'https://res.cloudinary.com/dory8iywk/image/upload/v1733802574/time-jump_dgvxz5.png',
       duration: '2 weeks minus the procastination',
       summary:
         'A life planner to break down goals into smaller achievable steps and to track your habits',
@@ -43,7 +44,8 @@ export async function seed(knex) {
       id: 2,
       name: 'Chatter',
       url: 'https://chatter.pushed.nz/',
-      image: '/images/maps/chatter.png',
+      image:
+        'https://res.cloudinary.com/dory8iywk/image/upload/v1733802573/chatter_tmdpz1.png',
       duration: '1.5 weeks',
       summary:
         'A Twitter-inspired app for Dev Academy graduates to stay connected after bootcamp. Users can create profiles, post updates, comment, and add friends',
@@ -65,7 +67,8 @@ export async function seed(knex) {
       id: 3,
       name: 'Todo App',
       url: 'https://noras-todo-app.pushed.nz/',
-      image: '/images/maps/todo-app.png',
+      image:
+        'https://res.cloudinary.com/dory8iywk/image/upload/v1733802576/todo-app_gjyqge.png',
       duration: '2 days',
       summary:
         'A simple to-do app created to practice my skills with Express.js and database integration',
@@ -86,7 +89,8 @@ export async function seed(knex) {
       id: 4,
       name: 'Glow Up',
       url: 'https://glow-up.pushed.nz/lights',
-      image: '/images/maps/glow-up.png',
+      image:
+        'https://res.cloudinary.com/dory8iywk/image/upload/v1733802573/glow-up_fmctsn.png',
       duration: '4 days',
       summary:
         'An online lamp store where users can browse and add lamps to their cart or submit a repair ticket',
@@ -107,7 +111,8 @@ export async function seed(knex) {
       id: 5,
       name: 'React Rockstars',
       url: 'http://react-rockstars.pushed.nz/',
-      image: '/images/maps/react-rockstars.png',
+      image:
+        'https://res.cloudinary.com/dory8iywk/image/upload/v1733802577/react-rockstars_xgy9qi.png',
       duration: '4 days',
       summary:
         'A place for you to browse albums of your favorite artists and listen to song snippets',
@@ -127,7 +132,8 @@ export async function seed(knex) {
       id: 6,
       name: 'Pokedex',
       url: 'http://pokedex.pushed.nz/',
-      image: '/images/maps/pokedex.png',
+      image:
+        'https://res.cloudinary.com/dory8iywk/image/upload/v1733802573/pokedex_gywoaj.png',
       duration: '4 days',
       summary: 'Our own version of a Pokédex',
       description:
@@ -145,7 +151,8 @@ export async function seed(knex) {
       id: 7,
       name: 'Problem Solving',
       url: 'https://manija-wahab.github.io/blog/problem-solving.html',
-      image: '/images/maps/problem-solving.png',
+      image:
+        'https://res.cloudinary.com/dory8iywk/image/upload/v1733802574/problem-solving_psnfd4.png',
       duration: '2 days',
       summary:
         'A blog where I share my approaches to problem-solving in different situations (starring sailor moon!!)',
@@ -160,10 +167,28 @@ export async function seed(knex) {
     },
     {
       id: 8,
+      name: 'Tic Tac Toe',
+      duration: '1 days',
+      url: 'https://nooryas-tic-tac-toe.netlify.app/',
+      image:
+        'https://res.cloudinary.com/dory8iywk/image/upload/v1733802577/tictactoe_d5etam.png',
+      summary: 'A simple Tic Tac Toe game',
+      description:
+        'Made this simple Tic Tac Toe game to practise my javascript skills, probably not the best Tic Tac Toe game you’ve ever seen but a humble attempt!',
+      icons: JSON.stringify([
+        'file-type-html.svg',
+        'file-type-css.svg',
+        'javascript-js.svg',
+      ]),
+      developers: JSON.stringify(['Me']),
+    },
+    {
+      id: 9,
       name: 'Learning Plan',
       duration: '2 days',
       url: 'https://manija-wahab.github.io/blog/learning-plan-2.html',
-      image: '/images/maps/learning-plan.png',
+      image:
+        'https://res.cloudinary.com/dory8iywk/image/upload/v1733802574/learning-plan_nq64bl.png',
       summary: 'A blog outlining my learning plan as I prepared for bootcamp',
       description:
         'I’m leaving this here because, upon reflection, it looks pretty neat! However, I’m not sure if it’s entirely responsive. Please avoid reading the text, as it’s a bit cringey. Thank you! I also had the chance to experiment with GSAP again, which was really fun. I just love doing css and designing this so muchhh!!',
@@ -175,11 +200,12 @@ export async function seed(knex) {
       developers: JSON.stringify(['Me']),
     },
     {
-      id: 9,
+      id: 10,
       name: 'Blog',
       duration: '1 week',
       url: 'https://manija-wahab.github.io/',
-      image: '/images/maps/blog.png',
+      image:
+        'https://res.cloudinary.com/dory8iywk/image/upload/v1733802574/blog_mjrgt0.png',
       summary: 'A simple static blog about myself. it’s cringe.',
       description:
         'This is my very first HTML page. The design may hurt your eyes a little, but at the time, I was incredibly proud of my work. Now that I look back at it, I realize it’s not responsive at all, and the CSS is quite a mess. I can see that the same result could have been achieved with just a fraction of the CSS I used here. Despite that, this blog holds a special place in my heart because it marks the beginning of my journey. It’s both nostalgic and bittersweet to revisit it',

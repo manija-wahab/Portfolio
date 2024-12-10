@@ -42,7 +42,7 @@ const AboutMe = () => {
         </div>
 
         <img
-          src="https://res.cloudinary.com/dey3ta01p/image/upload/v1732589872/one_gwoimj.png"
+          src="https://res.cloudinary.com/dory8iywk/image/upload/v1733798360/one_h12wpc.png"
           id="bgVideo"
           className="backgroundVideo"
           alt="blur"
@@ -101,13 +101,13 @@ const AboutMe = () => {
           {navigator.userAgent.includes('Safari') ? (
             <img
               className="avatar"
-              src="https://res.cloudinary.com/dey3ta01p/image/upload/v1732863238/ezgif.com-optimize_iquesc.gif"
+              src="https://res.cloudinary.com/dory8iywk/image/upload/v1733797993/ezgif.com-optimize_ur0umh.gif"
               alt="Avatar animation"
             />
           ) : (
             <video className="avatar" autoPlay muted loop playsInline>
               <source
-                src="https://res.cloudinary.com/dey3ta01p/video/upload/v1732512147/ezgif.com-gif-to-webm-converter_d1qjzi.webm"
+                src="https://res.cloudinary.com/dory8iywk/video/upload/v1733798070/ezgif.com-gif-to-webm-converter_ktyan9.webm"
                 type="video/webm"
               />
             </video>
@@ -158,7 +158,7 @@ const AboutMe = () => {
         rel="preload"
       >
         <source
-          src="https://res.cloudinary.com/dey3ta01p/video/upload/v1732498932/japanese-town-cloudy-day-moewalls-com_ik9sjt.mp4"
+          src="https://res.cloudinary.com/dory8iywk/video/upload/v1733798217/japanese-town-cloudy-day-moewalls-com_inmtje.mp4"
           type="video/mp4"
         ></source>
         Your browser does not support HTML5 video.

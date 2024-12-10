@@ -73,8 +73,10 @@ const Projects = () => {
     } else if (activeIndex === 6) {
       setColor('rgba(225, 133, 183, 0.5)')
     } else if (activeIndex === 7) {
-      setColor('rgba(107, 219, 255, 0.5)')
+      setColor('rgba(164, 127, 212, 0.5)')
     } else if (activeIndex === 8) {
+      setColor('rgba(107, 219, 255, 0.5)')
+    } else if (activeIndex === 9) {
       setColor('rgba(188, 225, 58, 0.5)')
     } else {
       setColor('')
@@ -118,7 +120,7 @@ const Projects = () => {
           <div className="start">Loading...</div>
         </div>
         <img
-          src="https://res.cloudinary.com/dey3ta01p/image/upload/v1732589878/three_eo2yqf.png"
+          src="https://res.cloudinary.com/dory8iywk/image/upload/v1733798355/three_vqabtc.png"
           id="bgVideo"
           className="backgroundVideo"
           alt="blur"
