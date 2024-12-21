@@ -111,7 +111,7 @@ const MainMenu = () => {
             onMouseEnter={handleMouseEnter}
             onClick={() =>
               downloadFiles([
-                { url: '/files/resume.pdf', fileName: 'Nooryas_CV.pdf' },
+                { url: '/files/NEWCV.pdf', fileName: 'Nooryas_CV.pdf' },
                 {
                   url: '/files/Certificate.pdf',
                   fileName: 'Nooryas_Certificate.pdf',
